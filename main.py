@@ -14,5 +14,6 @@ except Exception as error:
 
 try:
   productList = a.getProductInfo(accessToken)
+  print(productList)
 except Exception as error:
   print(error)

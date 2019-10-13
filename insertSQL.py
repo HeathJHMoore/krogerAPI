@@ -14,7 +14,17 @@ def establishDatabaseConnection():
 def createValueStatements(productList):
   valueString = 'VALUES '
   for product in productList:
-    valueString += f'({product['productId']}, {product['locationId']}, {product['productName']}, {product['productRegularPrice']}, {product['productPromoPrice']}, {product['captureDate']})'
+    productId = product['productId']
+    locationId = product['locationId']
+    productName = product['productName']
+    productRegularPrice = product['productRegularPrice']
+    productPromoPrice = product['productPromoPrice']
+    captureDate = product['captureDate']
+    valueString += '('
+    valueString += f'"{productId}", "{locationId}", "{productName}", {productRegularPrice}, {productPromoPrice}, "{captureDate}"'
+    valueString += ')'
+    # the below f string has syntax problems that I cannot figure out so I resorted to the above methodology
+    # valueString += f'({product['productId']}, {product['locationId']}, {product['productName']}, {product['productRegularPrice']}, {product['productPromoPrice']}, {product['captureDate']})'
     if productList.index(product) != len(productList) - 1:
       valueString += ', '
   return valueString

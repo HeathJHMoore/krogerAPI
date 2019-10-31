@@ -1,4 +1,4 @@
-import mysql.connector
+# import mysql.connector
 import variables as v
 
 # establish connection to mysql kroger database

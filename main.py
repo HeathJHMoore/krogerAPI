@@ -28,3 +28,6 @@ try:
   it.insertValues(productList)
 except Exception as error:
   print(error)
+
+
+print('script is finished')

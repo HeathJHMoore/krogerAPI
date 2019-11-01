@@ -1,3 +1,5 @@
+import os
+
 API_Token_Endpoint = 'https://api.kroger.com/v1/connect/oauth2/token'
 API_Product_Endpoint = 'https://api.kroger.com/v1/products/'
 client_credentials = os.environ['CLIENT_CREDENTIALS']

@@ -1,8 +1,8 @@
 API_Token_Endpoint = 'https://api.kroger.com/v1/connect/oauth2/token'
 API_Product_Endpoint = 'https://api.kroger.com/v1/products/'
-client_credentials = 'Basic bXlncm9jZXJ5ZGF0YS1kMjk5MmI5Yzk1MmFkNDY3NDMyY2NhYmUzNmZiNWFiNDpUc1VJbWd3YkZTbzFuY1pEeEEzMVBiVFFrMTZXQldFOA=='
+client_credentials = os.environ['CLIENT_CREDENTIALS']
 mySQLUsername = 'heathjhmoore'
-mySQLPassword = 'krogerdatabase'
+mySQLPassword = ##kroger databas password
 locationIds = [
   '02600567', #21st av Kroger
   '02600511', #2615 Franklin Pike

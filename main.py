@@ -10,6 +10,7 @@ productList = []
 # Step 1 : Get Access Token to hit Kroger API endpoints
 try:
   tokenRequest = a.makeTokenRequest()
+  print(tokenRequest)
   postContent = tokenRequest.json()
   accessToken = postContent['access_token']
 except Exception as error:

@@ -1,6 +1,7 @@
 import requests
 import apiRequests as a
 import insertSQL as it
+import sys
 
 accessToken = ''
 productList = []
@@ -14,6 +15,7 @@ try:
 except Exception as error:
   print(tokenRequest.status_code)
   print(error)
+  sys.stdout.flush()
 
 
 # Step 2 : Get a snapshot of all product information for today

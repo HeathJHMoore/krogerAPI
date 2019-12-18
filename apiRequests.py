@@ -31,6 +31,15 @@ def makeProductRequest(locationId, productId, accessToken):
   )
   return productRequest
 
+# Function created to remove apostrophes from product names to prevent errors on PostGreSQL insert statements
+def removeUnauthorizedCharacters(stringToParse):
+  fixedWord = ''
+  for character in stringToParse:
+    if (character != "'"):
+      fixedWord += character
+  return fixedWord
+
+
 # This function loops through each location and product to gather all product info into a list
 def getProductInfo(accessToken):
   productInfoList = []
@@ -40,7 +49,7 @@ def getProductInfo(accessToken):
       productDailyInfo = {
         'productId' : product,
         'locationId' : location,
-        'productName' : response['data']['description'],
+        'productName' : removeUnauthorizedCharacters(response['data']['description']),
         'productRegularPrice' : response['data']['items'][0]['price']['regular'],
         'productPromoPrice' : response['data']['items'][0]['price']['promo'],
         'captureDate' : datetime.datetime.now().strftime('%Y-%m-%d')

@@ -1,6 +1,7 @@
 import requests
 import apiRequests as a
 import insertSQL as it
+import emailUpdate as eu
 import sys
 
 accessToken = ''
@@ -16,6 +17,7 @@ try:
 except Exception as error:
   print(tokenRequest.status_code)
   print(error)
+  # the below line forces all console material from python to flush to the heroku log so I can see printed errors
   sys.stdout.flush()
 
 
@@ -31,6 +33,13 @@ try:
   it.insertValues(productList)
 except Exception as error:
   print(error)
+
+# Step 4 : Construct an email with today's product updates and send to my personal email
+# try:
+#   eu.sendUpdateEmail()
+# except Exception as error:
+#   print(error)
+
 
 
 print('script is finished')

@@ -1,0 +1,9 @@
+Heath,
+
+Here is today's daily product snapshot update for ${CAPTURE_DATE}
+
+Total Rows Inserted: ${TOTAL_ROWS_INSERTED}
+Total Products on Promotion: ${TOTAL_PROMOTION_PRODUCTS}
+
+Have a great day!
+MyGroceryData

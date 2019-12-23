@@ -35,10 +35,10 @@ except Exception as error:
   print(error)
 
 # Step 4 : Construct an email with today's product updates and send to my personal email
-# try:
-#   eu.sendUpdateEmail()
-# except Exception as error:
-#   print(error)
+try:
+  eu.emailUpdateMain()
+except Exception as error:
+  print(error)
 
 
 

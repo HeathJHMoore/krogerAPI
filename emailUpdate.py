@@ -92,6 +92,6 @@ async def construct_and_send_email():
 
 
 def emailUpdateMain():
-  # gathers the even loop for asynchronous action
+  # gathers the event loop for asynchronous action
   loop = asyncio.get_event_loop()
   loop.run_until_complete(construct_and_send_email())

@@ -5,7 +5,6 @@ import datetime
 # This function makes a POST request to receive an access token.
 # An access token is necessary to hit all Kroger API endpoints
 def makeTokenRequest():
-  print(v.client_credentials)
   request = requests.post(
     v.API_Token_Endpoint,
     headers={

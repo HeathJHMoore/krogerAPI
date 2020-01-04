@@ -11,7 +11,6 @@ productList = []
 # Step 1 : Get Access Token to hit Kroger API endpoints
 try:
   tokenRequest = a.makeTokenRequest()
-  print(tokenRequest)
   postContent = tokenRequest.json()
   accessToken = postContent['access_token']
 except Exception as error:
@@ -28,7 +27,7 @@ except Exception as error:
   print(error)
 
 
-# Step 3 : Insert today's product information into mySQL database
+# Step 3 : Insert today's product information into PostgreSQL database
 try:
   it.insertValues(productList)
 except Exception as error:
